@@ -9,6 +9,11 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
+      <head>
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#7EB398" />
+  <link rel="apple-touch-icon" href="/icons/heart-192.png" />
+</head>
       <body>
         {/* Header */}
         <header className="header">
