@@ -1,49 +1,46 @@
-// src/app/layout.tsx
-import "../styles/globals.css";
+/* src/styles/globals.css */
+:root{
+  --green:#58B97A;        /* Strollé green (header) */
+  --ink:#252A2F;          /* text */
+  --paper:#F7F3EE;        /* page bg */
+  --card:#FFFFFF;         /* cards */
+  --lime:#DCEFD8;         /* borders */
+}
 
-export const metadata = {
-  title: "Strollé — L’amitié, le temps du bien.",
-  description: "On ne matche pas. On é.",
-};
+*{ box-sizing:border-box; }
+html,body{ padding:0; margin:0; }
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+  line-height:1.5;
+}
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="fr">
-      <head>
-        {/* PWA / Favicon */}
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/icons/heart-32.png" />
-        <link rel="apple-touch-icon" href="/icons/heart-192.png" />
-        <meta name="theme-color" content="#58B97A" />
-      </head>
-      <body>
-        {/* HEADER */}
-        <header className="header">
-          <div className="container" style={{display:"flex", justifyContent:"space-between", alignItems:"center" }}>
-            <div className="logo-area">
-              <img src="/icons/heart-32.png" alt="Strollé" width={28} height={28} style={{display:"block", borderRadius:6}}/>
-              <strong className="logo-title">Strollé</strong>
-            </div>
-            <nav>
-              <a href="/">Accueil</a>
-              <a href="/manifeste">Manifeste</a>
-              <a href="/fonctionnement">Fonctionnement</a>
-              <a href="/partenaires">Partenaires</a>
-              <a href="/inscription" className="btn">Rejoindre</a>
-            </nav>
-          </div>
-        </header>
+.container{ max-width:1100px; margin:0 auto; padding:24px; }
 
-        {/* CONTENU */}
-        <main className="container">
-          {children}
-        </main>
+.header{ background:var(--green); color:#fff; }
+.logo-area{ display:flex; align-items:center; gap:12px; padding:12px 0; }
+.logo-title{ font-size:22px; font-weight:700; display:block; }
 
-        {/* FOOTER */}
-        <footer>
-          <div className="container">© 2025 Strollé — L’amitié, le temps du bien.</div>
-        </footer>
-      </body>
-    </html>
-  );
+nav a{ color:#fff; text-decoration:none; font-weight:600; margin-right:16px; }
+nav a:hover{ text-decoration:underline; }
+
+.btn{
+  display:inline-block; background:#fff; color:var(--ink);
+  text-decoration:none; font-weight:600; border-radius:999px;
+  padding:8px 14px; box-shadow:0 10px 20px rgba(0,0,0,.06);
+}
+.btn:hover{ filter:brightness(.96); }
+
+.card{
+  background:var(--card); border:1px solid var(--lime); border-radius:14px;
+  padding:18px; box-shadow:0 12px 20px rgba(0,0,0,.06);
+}
+
+footer{ margin-top:48px; border-top:1px solid var(--lime); padding:16px 0; }
+
+@media (max-width:720px){
+  .container{ padding:16px; }
+  .logo-title{ font-size:20px; }
+  nav a{ margin-right:10px; }
 }
