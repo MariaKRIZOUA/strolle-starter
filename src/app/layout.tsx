@@ -40,8 +40,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </header>
 
         {/* PAGE CONTENT */}
-        {children}
+        <main className="main-content">{children}</main>
+
+        <footer className="footer">
+          <p>© {new Date().getFullYear()} Strollé – L’amitié, le temps du bien.</p>
+        </footer>
       </body>
     </html>
   );
 }
+
+        
