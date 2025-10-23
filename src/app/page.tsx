@@ -10,7 +10,11 @@ export default function Home() {
           </h1>
           <p style={{margin:'0 0 18px',fontSize:18,color:'var(--sage)'}}>
             On ne matche pas. <strong>On é.</strong> Choisissez un moment, une passion, une personne qui vous comprend.
-          </p>
+          </p> {/* dans footer, à côté du slogan */}
+<div style={{display:'flex',gap:12}}>
+  <a href="/mentions-legales" style={{color:'var(--sage)',textDecoration:'none'}}>Mentions légales</a>
+  <a href="/confidentialite" style={{color:'var(--sage)',textDecoration:'none'}}>Confidentialité</a>
+</div>
           <div style={{display:'flex',gap:12,flexWrap:'wrap'}}>
             <a href="/inscription" className="btn">Rejoindre la liste d’attente</a>
             <a href="/fonctionnement" style={{textDecoration:'none',color:'var(--ink)'}}>Voir le fonctionnement →</a>
