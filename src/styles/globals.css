@@ -1,69 +1,50 @@
-:root {
-  --green: #7e0d98;
-  --paper: #f5f3ee;
-  --text: #2e3835;
-  --white: #ffffff;
+// src/app/layout.tsx
+import "../styles/globals.css";
+
+export const metadata = {
+  title: "Strollé — L’amitié, le temps du bien.",
+  description: "On ne matche pas. On é.",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="fr">
+      <head>
+        {/* PWA / Favicon */}
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/heart-32.png" />
+        <link rel="apple-touch-icon" href="/icons/heart-192.png" />
+        <meta name="theme-color" content="#58B97A" />
+      </head>
+      <body>
+        {/* HEADER */}
+        <header className="header">
+          <div className="container" style={{display:"flex", justifyContent:"space-between", alignItems:"center" }}>
+            <div className="logo-area">
+              <img src="/icons/heart-32.png" alt="Strollé" width={28} height={28} style={{display:"block", borderRadius:6}}/>
+              <strong className="logo-title">Strollé</strong>
+            </div>
+            <nav>
+              <a href="/">Accueil</a>
+              <a href="/manifeste">Manifeste</a>
+              <a href="/fonctionnement">Fonctionnement</a>
+              <a href="/partenaires">Partenaires</a>
+              <a href="/inscription" className="btn">Rejoindre</a>
+            </nav>
+          </div>
+        </header>
+
+        {/* CONTENU */}
+        <main className="container">
+          {children}
+        </main>
+
+        {/* FOOTER */}
+        <footer>
+          <div className="container">© 2025 Strollé — L’amitié, le temps du bien.</div>
+        </footer>
+      </body>
+    </html>
+  );
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  background: var(--paper);
-  color: var(--text);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif;
-}
-
-/* HEADER */
-.header {
-  background: var(--green);
-  color: var(--white);
-  padding: 16px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo-area strong {
-  font-size: 22px;
-  font-weight: 600;
-}
-
-/* NAVIGATION */
-nav a {
-  color: var(--white);
-  text-decoration: none;
-  margin-right: 16px;
-  transition: opacity 0.3s ease;
-}
-
-nav a:hover {
-  opacity: 0.8;
-}
-
-.btn {
-  background: var(--white);
-  color: var(--green);
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-weight: 600;
-}
-
-/* PAGE CONTENT */
-.main-content {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 24px;
-}
-
-/* FOOTER */
-.footer {
-  text-align: center;
-  padding: 16px;
-  background: #ede8e3;
-  color: var(--text);
-  font-size: 14px;
-}
