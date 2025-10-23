@@ -1,8 +1,22 @@
+// src/app/page.tsx
 export default function Home() {
   return (
-    <main style={{maxWidth: 900, margin: '0 auto', padding: 24}}>
-      <h1>Strollé — L’amitié, le temps du bien.</h1>
-      <p>On ne matche pas. <strong>On é.</strong></p>
+    <main style={{padding:'56px 0'}}>
+      <section className="container">
+        <div className="card" style={{padding:'36px'}}>
+          <span className="badge">💚 Marque bien-être & amitié choisie</span>
+          <h1 style={{margin:'14px 0 6px',fontSize:36,fontWeight:300}}>
+            L’amitié, le temps du bien.
+          </h1>
+          <p style={{margin:'0 0 18px',fontSize:18,color:'var(--sage)'}}>
+            On ne matche pas. <strong>On é.</strong> Choisissez un moment, une passion, une personne qui vous comprend.
+          </p>
+          <div style={{display:'flex',gap:12,flexWrap:'wrap'}}>
+            <a href="/inscription" className="btn">Rejoindre la liste d’attente</a>
+            <a href="/fonctionnement" style={{textDecoration:'none',color:'var(--ink)'}}>Voir le fonctionnement →</a>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
