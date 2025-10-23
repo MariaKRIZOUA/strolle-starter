@@ -19,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
             <nav style={{display:'flex',gap:16,fontSize:14}}>
               <a href="/" style={{color:'var(--ink)',textDecoration:'none'}}>Accueil</a>
+              <a href="/manifeste" style={{color:'var(--ink)',textDecoration:'none'}}>Manifeste</a>
               <a href="/fonctionnement" style={{color:'var(--ink)',textDecoration:'none'}}>Fonctionnement</a>
               <a href="/partenaires" style={{color:'var(--ink)',textDecoration:'none'}}>Partenaires</a>
               <a href="/inscription" className="btn">Rejoindre</a>
