@@ -1,46 +1,99 @@
 /* src/styles/globals.css */
-:root{
-  --green:#58B97A;        /* Strollé green (header) */
-  --ink:#252A2F;          /* text */
-  --paper:#F7F3EE;        /* page bg */
-  --card:#FFFFFF;         /* cards */
-  --lime:#DCEFD8;         /* borders */
+
+/* Palette */
+:root {
+  --paper: #F5F3EE;   /* beige clair en fond */
+  --ink: #2E3835;     /* texte gris très foncé */
+  --green: #97D89B;   /* vert clair pastel */
+  --line: #E0DCCD;    /* bordures */
+  --card: #FFFFFF;    /* cartes/blocs blancs */
 }
 
-*{ box-sizing:border-box; }
-html,body{ padding:0; margin:0; }
-body{
-  background:var(--paper);
-  color:var(--ink);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
-  line-height:1.5;
+/* Reset minimal */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.container{ max-width:1100px; margin:0 auto; padding:24px; }
-
-.header{ background:var(--green); color:#fff; }
-.logo-area{ display:flex; align-items:center; gap:12px; padding:12px 0; }
-.logo-title{ font-size:22px; font-weight:700; display:block; }
-
-nav a{ color:#fff; text-decoration:none; font-weight:600; margin-right:16px; }
-nav a:hover{ text-decoration:underline; }
-
-.btn{
-  display:inline-block; background:#fff; color:var(--ink);
-  text-decoration:none; font-weight:600; border-radius:999px;
-  padding:8px 14px; box-shadow:0 10px 20px rgba(0,0,0,.06);
-}
-.btn:hover{ filter:brightness(.96); }
-
-.card{
-  background:var(--card); border:1px solid var(--lime); border-radius:14px;
-  padding:18px; box-shadow:0 12px 20px rgba(0,0,0,.06);
+html,
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, sans-serif;
+  line-height: 1.4;
 }
 
-footer{ margin-top:48px; border-top:1px solid var(--lime); padding:16px 0; }
+/* Contrainte largeur + padding général */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
 
-@media (max-width:720px){
-  .container{ padding:16px; }
-  .logo-title{ font-size:20px; }
-  nav a{ margin-right:10px; }
+/* Cartes style “manifeste / mission / vision” */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+}
+
+/* Bouton “Rejoindre” */
+.btn {
+  display: inline-block;
+  background: var(--green);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  line-height: 1.2;
+  border: 0;
+}
+
+/* HEADER (barre du haut) */
+header.site-header {
+  background: var(--green);
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-area img {
+  display: block;
+  border-radius: 6px;
+}
+
+.logo-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* NAV (liens à droite dans l’en-tête) */
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 16px;
+  white-space: nowrap;
+}
+
+/* Footer */
+footer.site-footer {
+  background: transparent;
+  color: var(--ink);
+  font-size: 12px;
+  text-align: center;
+  padding: 24px;
+  border-top: 1px solid var(--line);
+  margin-top: 40px;
 }
