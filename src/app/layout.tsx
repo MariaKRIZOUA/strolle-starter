@@ -1,53 +1,70 @@
-import "../styles/globals.css";
+// src/app/layout.tsx
+import '../styles/globals.css';
 
 export const metadata = {
-  title: "Strollé – L’amitié, le temps du bien",
-  description: "On ne matche pas. On s’élève.",
+  title: "Strollé — L’amitié, le temps du bien.",
+  description: "On ne matche pas. On s'élève.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
       <head>
+        {/* PWA / favicon */}
         <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" href="/icons/heart-192.png" sizes="192x192" />
-        <meta name="theme-color" content="#7E0D98" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/heart-32.png" />
+        <link rel="icon" href="/icons/heart-192.png" />
+        <meta name="theme-color" content="#97D89B" />
       </head>
+
       <body>
         {/* HEADER */}
-        <header className="header">
+        <header className="site-header">
           <div
-            className="logo-area"
-            style={{ display: "flex", alignItems: "center", gap: 12 }}
+            className="container"
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              flexWrap: "wrap",
+              rowGap: "12px",
+            }}
           >
-            <img
-              src="/icons/heart-192.png"
-              alt="Strollé"
-              width={28}
-              height={28}
-              style={{ display: "block", borderRadius: 6 }}
-            />
-            <strong style={{ fontSize: 22, fontWeight: 600 }}>Strollé</strong>
-          </div>
+            {/* Logo + nom */}
+            <div className="logo-area">
+              <img
+                src="/icons/heart-32.png"
+                alt="Strollé"
+                width={28}
+                height={28}
+                style={{ display: "block", borderRadius: 6 }}
+              />
+              <strong className="logo-title">Strollé</strong>
+            </div>
 
-          <nav>
-            <a href="/" style={{ textDecoration: "none", color: "white", marginRight: 16 }}>Accueil</a>
-            <a href="/manifeste" style={{ textDecoration: "none", color: "white", marginRight: 16 }}>Manifeste</a>
-            <a href="/fonctionnement" style={{ textDecoration: "none", color: "white", marginRight: 16 }}>Fonctionnement</a>
-            <a href="/partenaires" style={{ textDecoration: "none", color: "white", marginRight: 16 }}>Partenaires</a>
-            <a href="/inscription" className="btn">Rejoindre</a>
-          </nav>
+            {/* NAV */}
+            <nav style={{ fontSize: "14px", fontWeight: 500 }}>
+              <a href="/">Accueil</a>
+              <a href="/manifeste">Manifeste</a>
+              <a href="/fonctionnement">Fonctionnement</a>
+              <a href="/partenaires">Partenaires</a>
+              <a href="/inscription" className="btn" style={{ marginLeft: 16 }}>
+                Rejoindre
+              </a>
+            </nav>
+          </div>
         </header>
 
-        {/* PAGE CONTENT */}
-        <main className="main-content">{children}</main>
+        {/* CONTENU DE LA PAGE */}
+        <main className="container" style={{ paddingTop: "24px" }}>
+          {children}
+        </main>
 
-        <footer className="footer">
-          <p>© {new Date().getFullYear()} Strollé – L’amitié, le temps du bien.</p>
+        {/* FOOTER */}
+        <footer className="site-footer">
+          © 2025 Strollé — L’amitié, le temps du bien.
         </footer>
       </body>
     </html>
   );
 }
-
-        
