@@ -1,25 +1,25 @@
 import "../styles/globals.css";
 
-
 export const metadata = {
-  title: "Strollé — L’amitié, le temps du bien.",
-  description: "On ne matche pas. On s'élève.",
+  title: "Strollé – L’amitié, le temps du bien.",
+  description: "On ne matche pas. On s’élève.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
       <head>
+        {/* PWA / favicon */}
         <link rel="manifest" href="/manifest.json" />
-<link rel="icon" type="image/png" sizes="32x32" href="/icons/heart-32.png" />
-<link rel="icon" href="/icons/heart-192.png" sizes="192x192" />
-<link rel="apple-touch-icon" href="/icons/heart-192.png" />
-<meta name="theme-color" content="#2E3835" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/heart-32.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/icons/heart-192.png" />
+        <link rel="apple-touch-icon" href="/icons/heart-192.png" />
+        <meta name="theme-color" content="#97D089" />
       </head>
 
       <body>
         {/* HEADER */}
-        <header className="site-header">
+        <header className="site-header" style={{ backgroundColor: "#97D089", padding: "12px 0" }}>
           <div
             className="container"
             style={{
@@ -28,42 +28,36 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               alignItems: "center",
               flexWrap: "wrap",
               rowGap: "12px",
+              maxWidth: "1100px",
+              margin: "0 auto",
+              padding: "0 24px",
             }}
           >
-            {/* Logo Strollé */}
-<div className="logo-area" style={{ display: "flex", alignItems: "center", gap: 8 }}>
-  <img
-    src="/icons/heart-32.png"
-    alt="Strollé"
-    width={28}
-    height={28}
-    style={{ display: "block", borderRadius: 6 }}
-  />
-  <strong style={{ fontSize: 22, fontWeight: 600 }}>Strollé</strong>
-</div>
+            {/* Logo + nom */}
+            <div className="logo-area" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <img
+                src="/icons/heart-32.png"
+                alt="Strollé"
+                width={28}
+                height={28}
+                style={{ display: "block", borderRadius: 6 }}
+              />
+              <strong style={{ fontSize: 22, fontWeight: 600, color: "#2E3835" }}>Strollé</strong>
+            </div>
 
-            {/* NAV */}
-            <nav style={{ fontSize: "14px", fontWeight: 500 }}>
-              <a href="/">Accueil</a>
-              <a href="/manifeste">Manifeste</a>
-              <a href="/fonctionnement">Fonctionnement</a>
-              <a href="/partenaires">Partenaires</a>
-              <a href="/inscription" className="btn" style={{ marginLeft: 16 }}>
-                Rejoindre
-              </a>
+            {/* Navigation */}
+            <nav>
+              <a href="/" style={{ marginRight: 16, color: "#2E3835", textDecoration: "none" }}>Accueil</a>
+              <a href="/manifeste" style={{ marginRight: 16, color: "#2E3835", textDecoration: "none" }}>Manifeste</a>
+              <a href="/fonctionnement" style={{ marginRight: 16, color: "#2E3835", textDecoration: "none" }}>Fonctionnement</a>
+              <a href="/partenaires" style={{ marginRight: 16, color: "#2E3835", textDecoration: "none" }}>Partenaires</a>
+              <a href="/inscription" style={{ color: "#2E3835", textDecoration: "none", fontWeight: 600 }}>Rejoindre</a>
             </nav>
           </div>
         </header>
 
-        {/* CONTENU DE LA PAGE */}
-        <main className="container" style={{ paddingTop: "24px" }}>
-          {children}
-        </main>
-
-        {/* FOOTER */}
-        <footer className="site-footer">
-          © 2025 Strollé — L’amitié, le temps du bien.
-        </footer>
+        {/* CONTENU PRINCIPAL */}
+        <main>{children}</main>
       </body>
     </html>
   );
