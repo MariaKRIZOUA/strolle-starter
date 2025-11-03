@@ -1,114 +1,119 @@
-/* ===========================
-   PALETTE DE COULEURS GLOBALE
-=========================== */
+/* ================================
+   PALETTE & VARIABLES
+================================== */
 :root {
-  --paper: #FFF5EE;      /* beige clair en fond */
-  --text: #2E3835;       /* texte gris très foncé */
-  --green: #97D089;      /* vert clair pastel */
-  --line: #E0CDC0;       /* bordures */
-  --card: #FFFFFF;       /* cartes/blocs blancs */
+  --paper: #FFF5EE;     /* fond beige clair */
+  --text:  #2E3835;     /* texte gris très foncé */
+  --green: #97D089;     /* vert clair pastel (header / badges) */
+  --line:  #E0CDC9;     /* séparateurs / bordures fines */
+  --card:  #FFFFFF;     /* cartes blanches */
 }
 
-/* ===========================
+/* ================================
    RESET MINIMAL
-=========================== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html,
-body {
+================================== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html, body {
   background: var(--paper);
   color: var(--text);
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
-/* ===========================
-   STRUCTURE DE PAGE
-=========================== */
+/* ================================
+   STRUCTURE GÉNÉRALE
+================================== */
 .container {
   max-width: 1100px;
-  margin: auto;
-  padding: 24px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-/* ===========================
-   EN-TÊTE / HEADER
-=========================== */
+/* Header */
 .site-header {
   background: var(--green);
-  color: white;
-  padding: 16px 0;
+  border-bottom: 1px solid rgba(0,0,0,.06);
 }
-
-.logo-area {
+.header-inner {
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  flex-wrap: wrap;
 }
+.logo-area { display: flex; align-items: center; gap: 8px; }
+.logo-title { font-size: 22px; font-weight: 600; color: #2E3835; }
 
-.logo-title {
-  font-size: 22px;
+/* Navigation */
+.main-nav { display: flex; align-items: center; gap: 16px; }
+.main-nav a {
+  text-decoration: none;
+  color: #2E3835;
+}
+.main-nav .btn {
+  background: #2E3835;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 999px;
   font-weight: 600;
 }
 
-/* ===========================
-   BOUTONS
-=========================== */
-.btn {
-  background: var(--green);
-  color: white;
-  border: none;
-  padding: 8px 18px;
-  border-radius: 25px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s;
+/* Page wrapper */
+.page { padding: 32px 0 56px; }
+
+/* ================================
+   BLOCS / COMPOSANTS RÉCURRENTS
+================================== */
+
+/* Bandeau badge en haut des pages (ex: “Marque bien-être…”) */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #E7F4E9;
+  color: #1d3b2b;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 14px;
 }
 
-.btn:hover {
-  background: #7EC472;
-}
+/* Titrage & intro */
+.page-title { font-size: 40px; margin: 10px 0 8px; }
+.lead { color: #4a5b56; margin-bottom: 16px; }
 
-/* ===========================
-   LIENS
-=========================== */
-a {
-  color: var(--text);
-  text-decoration: none;
-}
+/* Liens secondaires sous le titre (“Mentions… Conf… Voir le fonctionnement…”) */
+.subnav { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+.subnav a { color: #2E3835; text-decoration: none; }
+.subnav a:hover { text-decoration: underline; }
 
-a:hover {
-  text-decoration: underline;
-}
-
-/* === Mise en page commune === */
-.page { padding: 40px 0; }
-.page h1 { font-size: 40px; line-height: 1.15; margin: 8px 0 6px; }
-.page .lead { font-size: 18px; opacity: 0.9; margin: 0 0 18px; }
-
-/* Ruban/kicker au-dessus du titre */
-.kicker {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--card); border: 1px solid var(--line);
-  border-radius: 999px; padding: 6px 10px; font-size: 14px;
-}
-
-/* Grille de cartes réutilisable */
-.cards {
+/* Grille 3 colonnes (Accueil) */
+.grid-3 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px; margin-top: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
 }
-.cards .card h3 { margin: 0 0 6px; font-size: 18px; }
+@media (max-width: 900px) {
+  .grid-3 { grid-template-columns: 1fr; }
+}
 
-/* Liens secondaires regroupés (ex: mentions/confidentialité) */
-.link-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 8px 0 18px; }
-.link-row a { color: var(--ink); text-decoration: none; border-bottom: 1px dashed var(--line); }
+/* Cartes */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 10px 20px 20px rgba(0,0,0,.03);
+}
+.card h3 { margin: 0 0 8px; font-size: 18px; }
 
-/* Contenu texte long (mentions, confidentialité) */
-.prose p { margin: 0 0 12px; }
-.prose h2 { margin: 20px 0 8px; font-size: 22px; }
+/* Footer */
+.site-footer {
+  border-top: 1px solid rgba(0,0,0,.06);
+  padding: 16px 0 28px;
+  color: #6a7a75;
+  background: var(--paper);
+}
