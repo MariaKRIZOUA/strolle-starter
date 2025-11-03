@@ -10,11 +10,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr">
       <head>
-        {/* PWA / favicon */}
         <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/icons/heart-32.png" />
-        <link rel="icon" href="/icons/heart-192.png" />
-        <meta name="theme-color" content="#97D89B" />
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/heart-32.png" />
+<link rel="icon" href="/icons/heart-192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="/icons/heart-192.png" />
+<meta name="theme-color" content="#2E3835" />
       </head>
 
       <body>
