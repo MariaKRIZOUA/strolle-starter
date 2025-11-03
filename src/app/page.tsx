@@ -1,25 +1,22 @@
-// src/app/page.tsx
-export default function Home() {
+export default function Page() {
   return (
-    <main style={{padding:'56px 0'}}>
-      <section className="container">
-        <div className="card" style={{padding:'36px'}}>
-          <span className="badge">💚 Marque bien-être & amitié choisie</span>
-          <h1 style={{margin:'14px 0 6px',fontSize:36,fontWeight:300}}>
-            L’amitié, le temps du bien.
-          </h1>
-          <p style={{margin:'0 0 18px',fontSize:18,color:'var(--sage)'}}>
-            On ne matche pas. <strong>On é.</strong> Choisissez un moment, une passion, une personne qui vous comprend.
-          </p> {/* dans footer, à côté du slogan */}
-<div style={{display:'flex',gap:12}}>
-  <a href="/mentions-legales" style={{color:'var(--sage)',textDecoration:'none'}}>Mentions légales</a>
-  <a href="/confidentialite" style={{color:'var(--sage)',textDecoration:'none'}}>Confidentialité</a>
-</div>
-          <div style={{display:'flex',gap:12,flexWrap:'wrap'}}>
-            <a href="/inscription" className="btn">Rejoindre la liste d’attente</a>
-            <a href="/fonctionnement" style={{textDecoration:'none',color:'var(--ink)'}}>Voir le fonctionnement →</a>
-          </div>
-        </div>
+    <main className="container page">
+      <p className="kicker">💚 Marque bien-être & amitié choisie</p>
+      <h1>L’amitié, le temps du bien.</h1>
+      <p className="lead">
+        On ne matche pas. On s’élève. Choisissez un moment, une passion, une personne qui vous comprend.
+      </p>
+
+      <div className="link-row">
+        <a href="/mentions-legales">Mentions légales</a>
+        <a href="/confidentialite">Confidentialité</a>
+        <a href="/fonctionnement">Voir le fonctionnement →</a>
+      </div>
+
+      <section className="cards">
+        <div className="card"><h3>Rencontres apaisées</h3><p>Des interactions simples, sans pression.</p></div>
+        <div className="card"><h3>Temps choisi</h3><p>À la carte : ponctuel ou régulier.</p></div>
+        <div className="card"><h3>Ville par ville</h3><p>On commence en France, progressivement.</p></div>
       </section>
     </main>
   );
