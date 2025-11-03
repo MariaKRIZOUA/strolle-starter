@@ -19,45 +19,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
       <body>
         {/* HEADER */}
-        <header className="site-header" style={{ backgroundColor: "#97D089", padding: "12px 0" }}>
-          <div
-            className="container"
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              flexWrap: "wrap",
-              rowGap: "12px",
-              maxWidth: "1100px",
-              margin: "0 auto",
-              padding: "0 24px",
-            }}
-          >
-            {/* Logo + nom */}
-            <div className="logo-area" style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <img
-                src="/icons/heart-32.png"
-                alt="Strollé"
-                width={28}
-                height={28}
-                style={{ display: "block", borderRadius: 6 }}
-              />
-              <strong style={{ fontSize: 22, fontWeight: 600, color: "#2E3835" }}>Strollé</strong>
+        <header className="site-header">
+          <div className="container header-inner">
+            {/* Logo texte simple (on enlève l’image pour le moment) */}
+            <div className="logo-area">
+              <strong className="logo-title">Strollé</strong>
             </div>
 
             {/* Navigation */}
-            <nav>
-              <a href="/" style={{ marginRight: 16, color: "#2E3835", textDecoration: "none" }}>Accueil</a>
-              <a href="/manifeste" style={{ marginRight: 16, color: "#2E3835", textDecoration: "none" }}>Manifeste</a>
-              <a href="/fonctionnement" style={{ marginRight: 16, color: "#2E3835", textDecoration: "none" }}>Fonctionnement</a>
-              <a href="/partenaires" style={{ marginRight: 16, color: "#2E3835", textDecoration: "none" }}>Partenaires</a>
-              <a href="/inscription" style={{ color: "#2E3835", textDecoration: "none", fontWeight: 600 }}>Rejoindre</a>
+            <nav className="main-nav">
+              <a href="/">Accueil</a>
+              <a href="/manifeste">Manifeste</a>
+              <a href="/fonctionnement">Fonctionnement</a>
+              <a href="/partenaires">Partenaires</a>
+              <a href="/inscription" className="btn">Rejoindre</a>
             </nav>
           </div>
         </header>
 
-        {/* CONTENU PRINCIPAL */}
-        <main>{children}</main>
+        {/* CONTENU */}
+        <main className="container page">{children}</main>
+
+        {/* FOOTER (sobre) */}
+        <footer className="site-footer">
+          <div className="container">
+            <small>© 2025 Strollé — L’amitié, le temps du bien.</small>
+          </div>
+        </footer>
       </body>
     </html>
   );
