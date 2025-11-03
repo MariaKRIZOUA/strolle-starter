@@ -85,3 +85,30 @@ a:hover {
   text-decoration: underline;
 }
 
+/* === Mise en page commune === */
+.page { padding: 40px 0; }
+.page h1 { font-size: 40px; line-height: 1.15; margin: 8px 0 6px; }
+.page .lead { font-size: 18px; opacity: 0.9; margin: 0 0 18px; }
+
+/* Ruban/kicker au-dessus du titre */
+.kicker {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 999px; padding: 6px 10px; font-size: 14px;
+}
+
+/* Grille de cartes réutilisable */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px; margin-top: 24px;
+}
+.cards .card h3 { margin: 0 0 6px; font-size: 18px; }
+
+/* Liens secondaires regroupés (ex: mentions/confidentialité) */
+.link-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 8px 0 18px; }
+.link-row a { color: var(--ink); text-decoration: none; border-bottom: 1px dashed var(--line); }
+
+/* Contenu texte long (mentions, confidentialité) */
+.prose p { margin: 0 0 12px; }
+.prose h2 { margin: 20px 0 8px; font-size: 22px; }
