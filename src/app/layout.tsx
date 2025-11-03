@@ -30,17 +30,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               rowGap: "12px",
             }}
           >
-            {/* Logo + nom */}
-            <div className="logo-area">
-              <img
-                src="/icons/heart-32.png"
-                alt="Strollé"
-                width={28}
-                height={28}
-                style={{ display: "block", borderRadius: 6 }}
-              />
-              <strong className="logo-title">Strollé</strong>
-            </div>
+            {/* Logo Strollé */}
+<div className="logo-area" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+  <img
+    src="/icons/heart-32.png"
+    alt="Strollé"
+    width={28}
+    height={28}
+    style={{ display: "block", borderRadius: 6 }}
+  />
+  <strong style={{ fontSize: 22, fontWeight: 600 }}>Strollé</strong>
+</div>
 
             {/* NAV */}
             <nav style={{ fontSize: "14px", fontWeight: 500 }}>
