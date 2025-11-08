@@ -46,6 +46,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <small>© 2025 Strollé — L’amitié, le temps du bien.</small>
           </div>
         </footer>
+        import DebugSupabase from '@/components/DebugSupabase';
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="fr">
+      <head>…</head>
+      <body>
+        {/* …ton header + contenu… */}
+        {children}
+
+        {/* Debug Supabase */}
+        <DebugSupabase />
+      </body>
+    </html>
+  );
+}
         <DebugSupabase />
       </body>
     </html>
