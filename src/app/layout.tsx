@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import DebugSupabase from "../components/DebugSupabase";
 
 export const metadata = {
   title: "Strollé – L’amitié, le temps du bien.",
@@ -46,6 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <small>© 2025 Strollé — L’amitié, le temps du bien.</small>
           </div>
         </footer>
+        <DebugSupabase />
       </body>
     </html>
   );
